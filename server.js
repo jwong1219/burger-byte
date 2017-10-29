@@ -9,9 +9,16 @@ var app = express();
 //provides everything inside /public to the client i.e. css, js, other static assets
 app.use(express.static("./public"));
 
+app.use(bodyParser.urlencoded({extended: false}));
+app.use(bodyParser.json());
+
 //allows us to catch put methods from form requests with modified tags
 app.use(methodOverride('_method'));
 
-app.use(bodyParser.urlencoded({extended: true}));
-app.use(bodyParser.json());
+var routes = require("./controllers/burgers_controller.js");
 
+app.use("/", routes);
+
+app.listen(PORT, function() {
+  console.log("listening on port: " + PORT);
+});

@@ -13,8 +13,8 @@ var burger = {
     });
   },
 
-  updateOne: function(name, callback) {
-    orm.updateOne("burgers", {"devoured": true}, {"burger_name": name}, function(result) {
+  updateOne: function(id, callback) {
+    orm.updateOne("burgers", {"devoured": true}, {"id": id}, function(result) {
       callback(result);
     });
   }
