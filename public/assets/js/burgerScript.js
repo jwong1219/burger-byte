@@ -18,7 +18,7 @@ $(function() {
       name: $("#name").val()
     }
     console.log({newBurger});
-    $.post("/api/burgers", newBurger, function(response) {
+    $.post("/api/burgers", newBurger, function(request, response) {
       console.log(request);
       if(response) {
         console.log(response);
