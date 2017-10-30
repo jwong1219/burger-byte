@@ -1,12 +1,10 @@
-CREATE DATABASE burgers_db;
-
-USE burgers_db;
-
+USE dthpt85bolvecbpa;
 CREATE TABLE burgers (
   id INT(6) AUTO_INCREMENT NOT NULL,
   burger_name VARCHAR(50) NOT NULL,
   devoured BOOLEAN DEFAULT FALSE,
   date TIMESTAMP,
+  createdAt TIMESTAMP DEFAULT CURRENT_TIMESTAMP NOT NULL,
   PRIMARY KEY (id)
 );
 
