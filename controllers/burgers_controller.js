@@ -32,7 +32,7 @@ router.put("/api/burgers/:id", function(request, response) {
 })
 
 router.get('/favicon.ico', function(req, res) {
-    res.status(204);
+  res.status(204);
 });
 
 router.get("/", function(request, response) {
@@ -41,7 +41,7 @@ router.get("/", function(request, response) {
       burgers: data
     }
     // console.log(renderBurgers.burgers);
-    // response.json(renderBurgers.burgers);//only for testing
+    response.json(renderBurgers.burgers);//only for testing
     response.render("index", renderBurgers);
   })
 })
@@ -52,7 +52,7 @@ router.get("*", function(request, response) {
       burgers: data
     }
     // console.log(renderBurgers.burgers);
-    // response.json(renderBurgers.burgers);//only for testing
+    response.json(renderBurgers.burgers);//only for testing
     response.render("index", renderBurgers);
   })
 })
