@@ -31,6 +31,10 @@ router.put("/api/burgers/:id", function(request, response) {
   })
 })
 
+router.get('/favicon.ico', function(req, res) {
+    res.status(204);
+});
+
 router.get("/", function(request, response) {
   burger.selectAll(function(data) {
     var renderBurgers = {
