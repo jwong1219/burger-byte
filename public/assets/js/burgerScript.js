@@ -14,16 +14,20 @@ $(function() {
 
   $("#newburger").on("click", function() {
     event.preventDefault();
-    var newBurger = {
-      name: $("#name").val()
-    }
-    console.log({newBurger});
-    $.post("/api/burgers", newBurger, function(request, response) {
-      console.log(request);
-      if(response) {
-        console.log(response);
-        location.reload();
+    if($("#name").val().trim()) {
+      var newBurger = {
+        name: $("#name").val().trim()
       }
-    })
+      console.log({newBurger});
+      $.post("/api/burgers", newBurger, function(request, response) {
+        console.log(request);
+        if(response) {
+          console.log(response);
+          location.reload();
+        }
+      })
+    } else {
+      $("#message").text("You can't add a burger without a name!");
+    }
   });
 });
